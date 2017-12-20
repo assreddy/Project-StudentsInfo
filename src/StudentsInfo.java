@@ -16,6 +16,7 @@ public class StudentsInfo{
     System.out.println("Choose One of Option above....... ");
     System.out.println("=============================================================");
   }
+<<<<<<< HEAD
   private int studentNumber;
   private String studentName;
   private String studentSection;
@@ -32,21 +33,50 @@ public class StudentsInfo{
   // Get Student Number.
   public int getStudentNo() {
     return studentNumber;
+=======
+  private int m_no;
+  private String m_name;
+  private String m_section;
+
+  public static ArrayList<StudentsInfo> studentsInfo = new ArrayList<StudentsInfo>();
+
+  public StudentsInfo(int no, String name, String section) {
+    m_no = no;    
+    m_name = name;
+    m_section = section;
+  }
+
+  // Get Student Number.
+  public int getStudentNo() {
+    return m_no;
+>>>>>>> ebaa76818d79404da87c0b3b4b4e51f5676499bf
   }
 
   // Get Student Name.
   public String getStudentName() {
+<<<<<<< HEAD
     return studentName;
+=======
+    return m_name;
+>>>>>>> ebaa76818d79404da87c0b3b4b4e51f5676499bf
   }
 
   // Get Student section.
   public String getstudentsInfoection() {
+<<<<<<< HEAD
     return studentSection;
+=======
+    return m_section;
+>>>>>>> ebaa76818d79404da87c0b3b4b4e51f5676499bf
   }
 
   // Format to Print Student INFO.
   public String toStringstudentsInfo() {
+<<<<<<< HEAD
     return "Student Info:: Student Number: " +studentNumber+ ", Name: "+studentName+", Section: "+studentSection+"";        
+=======
+    return "Student Info:: S No: " +m_no+ ", Name: "+m_name+", Section: "+m_section+"";        
+>>>>>>> ebaa76818d79404da87c0b3b4b4e51f5676499bf
   }
 
   //Get all studentsInfo information based on Class Section.
@@ -64,12 +94,16 @@ public class StudentsInfo{
   public void addNewStudentsInfo(int no, String name, String section) {
     StudentsInfo student = new StudentsInfo(no,name,section);
     studentsInfo.add(student);
+<<<<<<< HEAD
     
+=======
+>>>>>>> ebaa76818d79404da87c0b3b4b4e51f5676499bf
   }
 
   // Delete Any Student Information.
   public static void deleteStudent(int sno) {
     ListIterator<StudentsInfo> lt = studentsInfo.listIterator();
+<<<<<<< HEAD
     int pos = 1;
 
     
@@ -88,6 +122,14 @@ public class StudentsInfo{
     }
   }  
 
+=======
+    StudentsInfo s = lt.next();
+    if (s.getStudentNo() == sno) {
+      System.out.printf("Student Details to Delete '%s' \n", sno);
+      studentsInfo.remove(s);
+    }
+  }
+>>>>>>> ebaa76818d79404da87c0b3b4b4e51f5676499bf
 
   // Delete all studentsInfo Information.
   public static void deleteAllStudens() {
@@ -97,11 +139,17 @@ public class StudentsInfo{
   public static void getStudent(int sno) {
     ListIterator<StudentsInfo> lt = studentsInfo.listIterator();
     StudentsInfo s = lt.next();
+<<<<<<< HEAD
     while(lt.hasNext()) {
       if (s.getStudentNo() == sno) {
         System.out.printf("Student Get NNN ONLY '%s' \n", sno);
         System.out.println(s);  
       }
+=======
+    if (s.getStudentNo() == sno) {
+      System.out.printf("Student Get NNN ONLY '%s' \n", sno);
+      System.out.println(s);
+>>>>>>> ebaa76818d79404da87c0b3b4b4e51f5676499bf
     }
   }
 
@@ -113,7 +161,11 @@ public class StudentsInfo{
       System.out.println(s.toStringstudentsInfo());
     }
   }
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> ebaa76818d79404da87c0b3b4b4e51f5676499bf
   public static void main(String[] args) {
 
     Scanner inputKey = new Scanner(System.in);
@@ -124,6 +176,7 @@ public class StudentsInfo{
       switch(choice) {
         case 1 : 
           System.out.println("Please Enter Student Info");
+<<<<<<< HEAD
           System.out.print("Student Number = ");
           int no_key = inputKey.nextInt();
           System.out.print("Student Name = ");
@@ -167,6 +220,47 @@ public class StudentsInfo{
             printstudentsInfoAll();}
           else {
             System.out.println("No Students in the System. Please ADD");}
+=======
+          System.out.println("Number = ");
+          int no_key = inputKey.nextInt();
+          System.out.println("Name = ");
+          String name_key = inputKey.next();
+          System.out.println("Section = "); 
+          String section_key = inputKey.next();
+          System.out.println("Parent Name = "); 
+          String pname_key = inputKey.next();
+          System.out.println("Parent Occupation = "); 
+          String poccupation_key = inputKey.next();
+          System.out.println("Parent Phone = ");    
+          int pphone_key = inputKey.nextInt();
+          System.out.println("Bill Number = ");
+          String bbill_key1 = inputKey.next();          
+          System.out.println("Amount Paid = ");
+          double bamount_key = inputKey.nextDouble();
+          
+          StudentsInfo students = new StudentsInfo(no_key,name_key,section_key);
+          BillingInfo billing = new BillingInfo(bbill_key1,bamount_key);
+          ParentsInfo parents = new ParentsInfo(pname_key,poccupation_key,pphone_key);
+          
+          students.addNewStudentsInfo(no_key,name_key,section_key);
+          parents.addParentInfo(pname_key,poccupation_key,pphone_key);
+          billing.addBillingInfo(bbill_key1,bamount_key);
+          
+          printstudentsInfoAll();
+          parents.printPrentsInfoAll();
+          billing.printBillingInfoAll(); 
+          
+          System.out.println("If you want add another student you can add then enter one 1(ADD).");
+          break;
+        case 2 : 
+          System.out.println("Your's Choice DELETE");
+          System.out.println("Student NO To delete = ");
+          // TODO when deleted 2nd student it still shows both the studentsInfo.
+          int del_Sno = inputKey.nextInt();
+          deleteStudent(del_Sno);
+          System.out.println("After Deleting Existing Studends Info...");
+          printstudentsInfoAll();
+>>>>>>> ebaa76818d79404da87c0b3b4b4e51f5676499bf
           break;
         case 3 : 
           System.out.println("Your's Choice MODIFY");
@@ -184,7 +278,11 @@ public class StudentsInfo{
           System.out.printf("Your's NOT Selected Any Option");  
 
       }
+<<<<<<< HEAD
 
+=======
+      
+>>>>>>> ebaa76818d79404da87c0b3b4b4e51f5676499bf
     } 
     while(choice < 5);
     inputKey.close();
