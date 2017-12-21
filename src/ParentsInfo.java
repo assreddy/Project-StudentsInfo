@@ -1,7 +1,6 @@
 import java.util.*;
 
 public class ParentsInfo{
-<<<<<<< HEAD
   private int studentNumber;
   private String parentName;
   private String parentOccupation;
@@ -38,7 +37,7 @@ public class ParentsInfo{
   }
   public void addParentInfo(int studentNumber, String parentName, String parentOccupation, int parentPhone ) {
     ParentsInfo parent = new ParentsInfo(studentNumber,parentName,parentOccupation,parentPhone);
-=======
+
   String p_name;
   String p_occupation;
   int p_phone;
@@ -68,7 +67,7 @@ public class ParentsInfo{
   }
   public void addParentInfo(String p_name, String p_occupation, int p_phone ) {
     ParentsInfo parent = new ParentsInfo(p_name,p_occupation,p_phone);
->>>>>>> ebaa76818d79404da87c0b3b4b4e51f5676499bf
+
     parentArrayList.add(parent) ;
   }
   
