@@ -1,17 +1,27 @@
 import java.util.*;
 
 public class ParentsInfo{
+<<<<<<< HEAD
+=======
+  private int studentNumber;
+>>>>>>> 6a49b2a2a2a8ebe7442d7d64994bda883b1d9fd6
   private String parentName;
   private String parentOccupation;
   private int parentPhone;
 
   public static ArrayList<ParentsInfo> parentArrayList = new ArrayList<ParentsInfo>();
 
+<<<<<<< HEAD
   ParentsInfo(String parentName, String parentOccupation, int parentPhone){
+=======
+  ParentsInfo(int studentNumber, String parentName, String parentOccupation, int parentPhone){
+    this.studentNumber = studentNumber;
+>>>>>>> 6a49b2a2a2a8ebe7442d7d64994bda883b1d9fd6
     this.parentName = parentName;
     this.parentOccupation = parentOccupation;
     this.parentPhone = parentPhone;
   }
+<<<<<<< HEAD
   
   /**
    * @return the parentPhone
@@ -45,6 +55,31 @@ public class ParentsInfo{
   }
   public void addParentInfo(String parentName, String parentOccupation, int parentPhone ) {
     ParentsInfo parent = new ParentsInfo(parentName,parentOccupation,parentPhone);
+=======
+
+  public String getParentName() {
+    return parentName;
+  }
+  
+  public int getStudentNumber() {
+    return studentNumber;
+  }
+
+  public  String getParentOccupation() {
+    return parentOccupation;
+
+  }
+  public int getParentPhoneNo() {
+    return parentPhone;
+  }
+
+  public String toStringParentsInfo() {
+    return "Parents Info:: Studnet Number:" +studentNumber+ " ,Parent Name:" +parentName+ 
+        ", Occupation: " +parentOccupation+", Phone Number: " +parentPhone;
+  }
+  public void addParentInfo(int studentNumber, String parentName, String parentOccupation, int parentPhone ) {
+    ParentsInfo parent = new ParentsInfo(studentNumber,parentName,parentOccupation,parentPhone);
+>>>>>>> 6a49b2a2a2a8ebe7442d7d64994bda883b1d9fd6
     parentArrayList.add(parent) ;
   }
   
