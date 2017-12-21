@@ -18,22 +18,36 @@ public class BillingInfo{
   return billNumber;}
 
   /**
+   * @param termAmount the termAmount to set
+   */
+  public void setTermAmount(double termAmount) {
+  this.termAmount = termAmount;}
+
+  /**
    * @param billNumber the billNumber to set
    */
   public void setBillNumber(String billNumber) {
   this.billNumber = billNumber;}
 
   /**
+   * 
+   */
+  public BillingInfo() {
+    super();
+    // TODO(sreenivasa): Auto-generated constructor stub
+  }
+
+  /**
    * @return the termtermAmount
    */
-  public double termAmount() {
+  public double getTermAmount() {
   return termAmount;}
 
   /**
-   * @param termtermAmount the termtermAmount to set
+   * @param termAmount the termtermAmount to set
    */
-  public void setTermtermAmount(double termtermAmount) {
-  this.termtermAmount = termtermAmount;}
+  public void setTermtermAmount(double termAmount) {
+  this.termAmount = termAmount;}
 
   public void addBillingInfo(String billNumber, double termtermAmount ){
     BillingInfo bill = new BillingInfo(billNumber,termtermAmount);
@@ -41,37 +55,7 @@ public class BillingInfo{
   }
   public String toStringBillingInfo() {
     return "Billing Info:: Bill Number: " +billNumber + ","
-  private int studentNumber;
-  private String billNumber;
-  private double termtermAmount;
-
-  public static ArrayList<BillingInfo> billArrayList = new ArrayList<BillingInfo>();
-
-  BillingInfo(int studentNumber, String billNumber, double termAmount){
-    this.studentNumber = studentNumber; 
-    this.billNumber = billNumber;
-    this.termtermAmount = termAmount;       
-  }
-
-  public int  getStudentNumber() {
-    return studentNumber;
-  }
-  
-  public String getBillNumber() {
-    return billNumber;
-  }
-
-  public double getBilltermAmount() {
-    return termtermAmount;
-  }
-
-  public void addBillingInfo(int studentNumber, String billNumber, double termtermAmount ){
-    BillingInfo bill = new BillingInfo(studentNumber, billNumber,termtermAmount);
-    billArrayList.add(bill);
-  }
-  public String toStringBillingInfo() {
-    return "Billing Info:: Studnet Number: " +studentNumber + " ,Bill Number: " +billNumber + ","
-        + " Term Fee: " +termtermAmount +"\n";
+        + " Term Fee: " +termAmount +"\n";
   }
   
   public void printBillingInfoAll() {
