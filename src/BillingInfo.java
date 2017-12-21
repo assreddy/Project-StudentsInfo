@@ -1,7 +1,6 @@
 import java.util.*;
 
 public class BillingInfo{
-<<<<<<< HEAD
   private String billNumber;
   private double termAmount;
 
@@ -42,7 +41,6 @@ public class BillingInfo{
   }
   public String toStringBillingInfo() {
     return "Billing Info:: Bill Number: " +billNumber + ","
-=======
   private int studentNumber;
   private String billNumber;
   private double termtermAmount;
@@ -73,7 +71,6 @@ public class BillingInfo{
   }
   public String toStringBillingInfo() {
     return "Billing Info:: Studnet Number: " +studentNumber + " ,Bill Number: " +billNumber + ","
->>>>>>> 6a49b2a2a2a8ebe7442d7d64994bda883b1d9fd6
         + " Term Fee: " +termtermAmount +"\n";
   }
   
