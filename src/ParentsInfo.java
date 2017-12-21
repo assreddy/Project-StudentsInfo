@@ -1,59 +1,54 @@
 import java.util.*;
 
-public class ParentsInfo{
-  private String parentName;
-  private String parentOccupation;
-  private int parentPhone;
+public class BillingInfo{
+  private String billNumber;
+  private double termAmount;
 
-  public static ArrayList<ParentsInfo> parentArrayList = new ArrayList<ParentsInfo>();
+  public static ArrayList<BillingInfo> billArrayList = new ArrayList<BillingInfo>();
 
-  ParentsInfo(String parentName, String parentOccupation, int parentPhone){
-    this.parentName = parentName;
-    this.parentOccupation = parentOccupation;
-    this.parentPhone = parentPhone;
+  BillingInfo(String billNumber, double termAmount){
+    this.billNumber = billNumber;
+    this.termAmount = termAmount;       
+  }
+
+  /**
+   * @return the billNumber
+   */
+  public String getBillNumber() {
+  return billNumber;}
+
+  /**
+   * @param billNumber the billNumber to set
+   */
+  public void setBillNumber(String billNumber) {
+  this.billNumber = billNumber;}
+
+  /**
+   * @return the termtermAmount
+   */
+  public double termAmount() {
+  return termAmount;}
+
+  /**
+   * @param termAmount the termtermAmount to set
+   */
+  public void setTermtermAmount(double termAmount) {
+  this.termAmount = termAmount;}
+
+  public void addBillingInfo(String billNumber, double termtermAmount ){
+    BillingInfo bill = new BillingInfo(billNumber,termtermAmount);
+    billArrayList.add(bill);
+  }
+  public String toStringBillingInfo() {
+    return "Billing Info:: Bill Number: " +billNumber + ","
+        + " Term Fee: " +termAmount +"\n";
   }
   
-  /**
-   * @return the parentPhone
-   */
-  public int getParentPhone() {
-  return parentPhone;}
-
-  /**
-   * @param parentPhone the parentPhone to set
-   */
-  public void setParentPhone(int parentPhone) {
-  this.parentPhone = parentPhone;}
-
-  /**
-   * @param parentName the parentName to set
-   */
-  public void setParentName(String parentName) {
-  this.parentName = parentName;}
-
-  /**
-   * @param parentOccupation the parentOccupation to set
-   */
-  public void setParentOccupation(String parentOccupation) {
-  this.parentOccupation = parentOccupation;}
-  
-  
-
-  public String toStringParentsInfo() {
-    return "Parents Info:: Parent Name:" +parentName+ 
-        ", Occupation: " +parentOccupation+", Phone Number: " +parentPhone;
-  }
-  public void addParentInfo(String parentName, String parentOccupation, int parentPhone ) {
-    ParentsInfo parent = new ParentsInfo(parentName,parentOccupation,parentPhone);
-    parentArrayList.add(parent) ;
-  }
-  
-  public void printPrentsInfoAll() {
-    ListIterator<ParentsInfo> lt = parentArrayList.listIterator();
+  public void printBillingInfoAll() {
+    ListIterator<BillingInfo> lt = billArrayList.listIterator();
     while(lt.hasNext()) {
-      ParentsInfo p = lt.next();
-      System.out.println(p.toStringParentsInfo());
+      BillingInfo b = lt.next();
+      System.out.print(b.toStringBillingInfo());
     }
   }
-  
 }
